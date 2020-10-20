@@ -97,7 +97,7 @@ namespace Timer
             button_B.Text = "クリア";
             button_Z.Text = "終了";
 
-            this.label1.Text = "Ver.0.2.6";
+            this.label1.Text = "Ver.0.2.7";
             this.ActiveControl = this.comboBox1;
 
             button_C.Text = "接続";
@@ -190,7 +190,7 @@ namespace Timer
                          ts.Seconds == SpeechTime[speech_num].time_Yellow.Seconds)
                 {
                     this.Color_panel.BackColor = System.Drawing.Color.FromArgb(0xFF, 0xFF, 0x00);
-                    if ( com_connected)
+                    if ( com_connected )
                     {
                         serialPort1.Write("Y");
                     }
@@ -240,7 +240,7 @@ namespace Timer
                         button_C.Enabled = false;
                         comboBox2.Enabled = false;
                         com_connected = true;
-                        this.ActiveControl = this.comboBox1;
+                        this.ActiveControl = this.button_A;
                     }
                     else
                     {

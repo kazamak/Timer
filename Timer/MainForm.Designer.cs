@@ -162,6 +162,10 @@
             this.button_C.UseVisualStyleBackColor = true;
             this.button_C.Click += new System.EventHandler(this.button_C_Click);
             // 
+            // serialPort1
+            // 
+            this.serialPort1.BaudRate = 38400;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
