@@ -21,6 +21,7 @@ namespace Timer
         string currentTime = string.Empty;
         int speech_num = 0;
         Boolean com_connected = false;
+        int counter_60sec = 60;
 
         struct _speechTime
         {
@@ -96,8 +97,9 @@ namespace Timer
             button_A.Text = "開始";
             button_B.Text = "クリア";
             button_Z.Text = "終了";
+            button_D.Text = "コメントタイム(60秒)";
 
-            this.label1.Text = "Ver.0.2.7";
+            this.label1.Text = "Ver.0.2.8";
             this.ActiveControl = this.comboBox1;
 
             button_C.Text = "接続";
@@ -257,6 +259,29 @@ namespace Timer
             {
                 MessageBox.Show("COM portを選択して下さい。");
             }
+        }
+
+        private void button_D_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 1000;
+            counter_60sec = 60;
+            textBox1.Text = "60";
+            timer1.Enabled = true;
+            textBox1.Visible = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            counter_60sec--;
+
+            if( counter_60sec == 0)
+            {
+                timer1.Enabled = false;
+                textBox1.Visible = false;
+                textBox1.Text = counter_60sec.ToString();
+                this.ActiveControl = this.button_A;
+            } else
+                textBox1.Text = counter_60sec.ToString();
         }
     }
 }

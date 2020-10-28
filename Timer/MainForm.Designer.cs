@@ -41,6 +41,10 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button_C = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button_D = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Color_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // TextBox_ElapsedTime
@@ -82,6 +86,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Color_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Color_panel.Controls.Add(this.textBox1);
             this.Color_panel.Location = new System.Drawing.Point(220, 9);
             this.Color_panel.Name = "Color_panel";
             this.Color_panel.Size = new System.Drawing.Size(524, 471);
@@ -118,7 +123,7 @@
             this.Time_Records.Multiline = true;
             this.Time_Records.Name = "Time_Records";
             this.Time_Records.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.Time_Records.Size = new System.Drawing.Size(191, 303);
+            this.Time_Records.Size = new System.Drawing.Size(191, 277);
             this.Time_Records.TabIndex = 7;
             // 
             // label1
@@ -166,11 +171,39 @@
             // 
             this.serialPort1.BaudRate = 38400;
             // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox1.Location = new System.Drawing.Point(129, 130);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(261, 103);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.Visible = false;
+            // 
+            // button_D
+            // 
+            this.button_D.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_D.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_D.Location = new System.Drawing.Point(23, 393);
+            this.button_D.Name = "button_D";
+            this.button_D.Size = new System.Drawing.Size(191, 23);
+            this.button_D.TabIndex = 12;
+            this.button_D.Text = "D";
+            this.button_D.UseVisualStyleBackColor = true;
+            this.button_D.Click += new System.EventHandler(this.button_D_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 492);
+            this.Controls.Add(this.button_D);
             this.Controls.Add(this.button_C);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
@@ -185,6 +218,8 @@
             this.Name = "MainForm";
             this.Text = "TM_Timer_main";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Color_panel.ResumeLayout(false);
+            this.Color_panel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +239,9 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button_C;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button_D;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
