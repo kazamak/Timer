@@ -99,7 +99,7 @@ namespace Timer
             button_Z.Text = "終了";
             button_D.Text = "コメントタイム(60秒)";
 
-            this.label1.Text = "Ver.0.2.8";
+            this.label1.Text = "Ver.0.2.9";
             this.ActiveControl = this.comboBox1;
 
             button_C.Text = "接続";
