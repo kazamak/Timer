@@ -42,5 +42,3 @@ Windows 10, Visual studio 2019
 再配布等、ご自由に行ってください。
 
 Email: kazamak(atmark)gmail.com
-
-(--
