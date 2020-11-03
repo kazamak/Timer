@@ -10,6 +10,9 @@ Windows10で動作します。
 設定ファイル等はありません。  
 Timer.exe --- TM Timer実行ファイル
  
+## スクリーンショット
+![Screenshot](https://github.com/kazamak/Timer/blob/master/screen_shot.png?raw=true)
+
 ## 使用方法
 - Timer.exeアイコンをダブルクリックし起動します。
 - 一番上のドロップダウンメニューで、スピーチの種類を選択します。
