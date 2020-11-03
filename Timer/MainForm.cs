@@ -99,7 +99,7 @@ namespace Timer
             button_Z.Text = "終了";
             button_D.Text = "コメントタイム(60秒)";
 
-            this.label1.Text = "Ver.0.2.9";
+            this.label1.Text = "Ver.0.2.10";
             this.ActiveControl = this.comboBox1;
 
             button_C.Text = "接続";
@@ -137,9 +137,16 @@ namespace Timer
             }
             else
             {
-                sw.Start();
-                dt.Start();
-                button_A.Text = "停止";
+                if( comboBox1.SelectedIndex == -1)
+                {
+                    MessageBox.Show("スピーチを選択してください。");
+                } else
+                {
+                    sw.Start();
+                    dt.Start();
+                    button_A.Text = "停止";
+                }
+                
             }
         }
 
