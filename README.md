@@ -8,7 +8,9 @@ Windows10で動作します。
 ## ファイル構成　および　インストール
 実行ファイル一つのみです。これをデスクトップ等、好きな場所においてください。  
 設定ファイル等はありません。  
-Timer.exe --- TM Timer実行ファイル
+Timer.exe --- TM Timer実行ファイル  
+初回起動時に、「WindowsによってPCが保護されました。」という警告が出ますが、「詳細情報」をクリックして進んでください。  
+これは、コード署名が無いためです。
  
 ## スクリーンショット
 ![Screenshot](https://github.com/kazamak/Timer/blob/master/screen_shot.png?raw=true)
