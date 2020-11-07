@@ -35,6 +35,9 @@ Windows10で動作します。
 OBS studioというソフトと仮想カメラソフトを使って、Zoomのビデオで指定します。OBS上でTimer.exeの画面をウィンドウキャプチャで取り込みます。
 これにより、Zoomの画面共有を使用せずに、参加者にTM_Timer表示を見せることができます。
 
+- [OBS studio](https://obsproject.com/download)  
+- [OBS virtual cam extension](https://obsproject.com/forum/resources/obs-virtualcam.949/)
+
 ## 開発環境
 Windows 10, Visual studio 2019  
 
