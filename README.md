@@ -33,7 +33,8 @@ Windows10で動作します。
 ## 例会での使用方法
 - Zoomを使ったオンライン例会の場合  
 OBS studioというソフトと仮想カメラソフトを使って、Zoomのビデオで指定します。OBS上でTimer.exeの画面をウィンドウキャプチャで取り込みます。
-これにより、Zoomの画面共有を使用せずに、参加者にTM_Timer表示を見せることができます。
+これにより、Zoomの画面共有を使用せずに、参加者にTM_Timer表示を見せることができます。  
+詳しくは、OBS設定方法.pptxを参照ください。
 
 - [OBS studio](https://obsproject.com/download)  
 - [OBS virtual cam extension](https://obsproject.com/forum/resources/obs-virtualcam.949/)
