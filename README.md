@@ -9,9 +9,18 @@ Windows10で動作します。
 実行ファイル一つのみです。これをデスクトップ等、好きな場所においてください。  
 設定ファイル等はありません。  
 - Timer.exe --- TM Timer実行ファイル  
+
 初回起動時に、「WindowsによってPCが保護されました。」という警告が出ますが、「詳細情報」をクリックして進んでください。  
 これは、コード署名が無いためです。
 新しいバージョンをインストールする場合は、上書きを行ってください。
+
+## 使用パターン
+|組み合わせパターン|利用場所|
+|:---|:---|
+|TM_Timer単独|個人のスピーチの練習|
+|TM_TimerとOBS Studioを組み合わせる|オンライン例会|
+|TM_timerとLED表示灯を組み合わせる|オンサイト例会|
+|TM_TimerとOBS StudioとLED表示灯を組み合わせる|ハイブリッド例会|
  
 ## スクリーンショット
 ![Screenshot](https://github.com/kazamak/Timer/blob/master/screen_shot.png?raw=true)
