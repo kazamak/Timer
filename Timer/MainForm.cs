@@ -19,7 +19,7 @@ namespace Timer
         DispatcherTimer dt = new DispatcherTimer();
         Stopwatch sw = new Stopwatch();
         string currentTime = string.Empty;
-        int speech_num = 0;
+        int speech_num = -1;
         Boolean com_connected = false;
         int counter_60sec = 60;
 
@@ -78,6 +78,11 @@ namespace Timer
                            TimeSpan.FromMinutes(2.5),
                            TimeSpan.FromMinutes(3.0),
                            TimeSpan.FromMinutes(3.5)),
+            new _speechTime("コンテスト (5-7分)",
+                           TimeSpan.FromMinutes(5.0),
+                           TimeSpan.FromMinutes(6.0),
+                           TimeSpan.FromMinutes(7.0),
+                           TimeSpan.FromMinutes(59.0)),
             new _speechTime("**テストモード** (3秒毎)",
                            TimeSpan.FromSeconds(3.0),
                            TimeSpan.FromSeconds(6.0),
@@ -99,7 +104,7 @@ namespace Timer
             button_Z.Text = "終了";
             button_D.Text = "コメントタイム(60秒)";
 
-            this.label1.Text = "Ver.0.2.10";
+            this.label1.Text = "Ver.0.2.11";
             this.ActiveControl = this.comboBox1;
 
             button_C.Text = "接続";
@@ -125,6 +130,7 @@ namespace Timer
 
             Time_Records.AppendText(SpeechTime[speech_num].name.ToString());
             Time_Records.AppendText("\r\n");
+
             button_A.Select();
         }
 
@@ -154,28 +160,43 @@ namespace Timer
         {
             TimeSpan ts = sw.Elapsed;
 
-            currentTime = String.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
-            Time_Records.AppendText( currentTime );
-            if( ts > SpeechTime[speech_num].time_End )
+            if( comboBox1.SelectedIndex == -1)
             {
-                Time_Records.AppendText("(++)");
-            } else if(ts < SpeechTime[speech_num].time_Green)
-            {
-                Time_Records.AppendText("(--)");
+                MessageBox.Show("スピーチを選択してください。");
             }
-            Time_Records.AppendText("\r\n");
-
-            sw.Stop();
-            sw.Reset();
-            dt.Stop();
-
-            this.Color_panel.BackColor = System.Drawing.Color.FromArgb(0x00, 0x00, 0x00);
-            if ( com_connected)
+            else
             {
-                serialPort1.Write("B");
+                if( ! SpeechTime[speech_num].name.Equals("コンテスト (5-7分)") )
+                {
+                    currentTime = String.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds);
+                    if( currentTime != "00:00")
+                    {
+                        Time_Records.AppendText( currentTime );
+                        if( ts > SpeechTime[speech_num].time_End )
+                        {
+                            Time_Records.AppendText("(++)");
+                        } else if(ts < SpeechTime[speech_num].time_Green)
+                        {
+                            Time_Records.AppendText("(--)");
+                        }
+                        Time_Records.AppendText("\r\n");
+                    }
+                    
+                }
+
+                sw.Stop();
+                sw.Reset();
+                dt.Stop();
+
+                this.Color_panel.BackColor = System.Drawing.Color.FromArgb(0x00, 0x00, 0x00);
+                if ( com_connected )
+                {
+                    serialPort1.Write("B");
+                }
+                TextBox_ElapsedTime.Text = "00:00";
+                button_A.Text = "開始";
             }
-            TextBox_ElapsedTime.Text = "00:00";
-            button_A.Text = "開始";
+
         }
 
         void dt_Tick(object sender, EventArgs e)
@@ -289,6 +310,11 @@ namespace Timer
                 this.ActiveControl = this.button_A;
             } else
                 textBox1.Text = counter_60sec.ToString();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

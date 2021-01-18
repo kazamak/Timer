@@ -33,6 +33,7 @@
             this.button_A = new System.Windows.Forms.Button();
             this.button_B = new System.Windows.Forms.Button();
             this.Color_panel = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_Z = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Time_Records = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button_C = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_D = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Color_panel.SuspendLayout();
@@ -51,6 +51,7 @@
             // 
             this.TextBox_ElapsedTime.Cursor = System.Windows.Forms.Cursors.No;
             this.TextBox_ElapsedTime.Font = new System.Drawing.Font("MS UI Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.TextBox_ElapsedTime.ForeColor = System.Drawing.Color.LightGray;
             this.TextBox_ElapsedTime.Location = new System.Drawing.Point(23, 64);
             this.TextBox_ElapsedTime.Name = "TextBox_ElapsedTime";
             this.TextBox_ElapsedTime.Size = new System.Drawing.Size(191, 39);
@@ -91,6 +92,18 @@
             this.Color_panel.Name = "Color_panel";
             this.Color_panel.Size = new System.Drawing.Size(524, 471);
             this.Color_panel.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox1.Location = new System.Drawing.Point(129, 130);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(261, 103);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.Visible = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button_Z
             // 
@@ -170,17 +183,6 @@
             // serialPort1
             // 
             this.serialPort1.BaudRate = 38400;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("MS UI Gothic", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBox1.Location = new System.Drawing.Point(129, 130);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 103);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.Visible = false;
             // 
             // button_D
             // 
